@@ -53,7 +53,7 @@ jobs:
           git push origin pg
 
       - name: Notify on merge conflicts
-        if: failure()
+        if: env.MERGE_CONFLICT == 'true'
         env:
           REPOSITORY_URL: ${{ github.repositoryUrl }}
           CONFLICTING_COMMIT: ${{ env.CONFLICTING_COMMIT }}
