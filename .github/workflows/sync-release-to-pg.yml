@@ -54,7 +54,7 @@ jobs:
           echo "RELEASE_HEAD=$RELEASE_HEAD"
 
           # Attempt to merge release into pg
-          if ! git pull origin release --allow-unrelated-histories; then
+          if ! git pull origin release; then
             echo "Merge conflict detected during merge"
 
             # Capture the conflicting commit SHAs (both HEAD of pg and the merge commit from release)
