@@ -36,8 +36,7 @@ jobs:
         run: |
           git config pull.rebase true 
           git config user.email "automated@github.com"
-          git config user.name "Automated Github Action"
-          git clone 
+          git config user.name "Automated Github Action" 
 
       - name: Fetch pg branch
         run: git fetch origin pg
