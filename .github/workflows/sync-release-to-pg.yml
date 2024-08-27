@@ -34,7 +34,7 @@ jobs:
 
       - name: Set Git config values
         run: |
-          git config pull.rebase true 
+          git config pull.rebase false 
           git config user.email "automated@github.com"
           git config user.name "Automated Github Action" 
 
