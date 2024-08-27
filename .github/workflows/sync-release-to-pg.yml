@@ -15,14 +15,17 @@ jobs:
         with:
           ref: release  # Checkout the release branch
 
-      - name: Fetch pg branch
-        run: |
-          git fetch origin pg
-
-      - name: Checkout pg branch
+      - name: Set Git config values
         run: |
           git config pull.rebase false
-          git checkout pg
+          git config user.email "automated@github.com"
+          git config user.name "Automated Github Action"
+
+      - name: Fetch pg branch
+        run: git fetch origin pg
+
+      - name: Checkout pg branch
+        run: git checkout pg
 
       - name: Merge release to pg
         id: merge_commits
