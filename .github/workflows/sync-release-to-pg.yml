@@ -15,12 +15,14 @@ jobs:
         with:
           ref: release  # Checkout the release branch
 
-      - name: Fetch all branches
+      - name: Fetch pg branch
         run: |
-          git fetch --all
+          git fetch origin pg
 
       - name: Checkout pg branch
-        run: git checkout pg
+        run: |
+          git config pull.rebase false
+          git checkout pg
 
       - name: Merge release to pg
         id: merge_commits
